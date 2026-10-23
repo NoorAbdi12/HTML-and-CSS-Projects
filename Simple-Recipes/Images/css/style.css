@@ -1,0 +1,97 @@
+
+html {
+    scroll-behavior: smooth;
+}
+
+#about {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 30px;
+    color: #333;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* Website */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #fffaf5;
+}
+
+/* Navigation */
+nav {
+    background-color: #333;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 30px;
+}
+
+/* Recipes */
+#recipes {
+    padding: 30px;
+}
+
+#recipes img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Recipes Dropdown */
+nav ul li {
+    position: relative;
+}
+
+nav ul li div {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #333;
+    min-width: 180px;
+    padding: 10px;
+    z-index: 10;
+}
+
+nav ul li:hover div {
+    display: block;
+}
+
+nav ul li div a {
+    display: block;
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+nav ul li div a:hover {
+    background-color: #555;
+}
+#recipes {
+    padding: 30px;
+    margin: 0 auto;
+}
