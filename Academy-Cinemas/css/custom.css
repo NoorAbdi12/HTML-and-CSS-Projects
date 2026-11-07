@@ -1,0 +1,61 @@
+
+/* Theatre curtain background */
+body {
+    background-image: url('../images/theater-curtains.jpg');
+    background-size: 100%;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #8B0000;
+}
+
+/* Navigation text */
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #FFD700;
+}
+
+/* Navigation hover effect */
+.navbar .navbar-brand:hover,
+.navbar .nav-link:hover {
+    color: #FFFFFF;
+}
+
+/* Academy Cinemas main logo */
+.main-logo {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+}
+
+/* Movie poster sizes and alignment */
+.movie-poster {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Movie information cards */
+.movie-card {
+    height: 100%;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Footer styling */
+.footer-img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+}
+
+.footer-text {
+    color: white;
+}
