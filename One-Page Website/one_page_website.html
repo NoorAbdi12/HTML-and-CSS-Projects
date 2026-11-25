@@ -1,0 +1,326 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore the World</title>
+
+    <style>
+        /* General website styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f8fc;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #174c77;
+            padding: 20px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Website sections */
+        section {
+            padding: 40px 20px;
+        }
+
+        h1 {
+            font-size: 40px;
+            color: #174c77;
+        }
+
+        h2 {
+            color: #174c77;
+        }
+
+        /* Gallery layout */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            max-width: 1000px;
+            margin: 30px auto;
+        }
+
+        /* Individual destination cards */
+        .gallery-item {
+            padding: 15px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Smaller thumbnail images */
+        .lightbox-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .lightbox-image:hover {
+            transform: scale(1.04);
+        }
+
+        /* Lightbox popup background */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        /* Enlarged image inside the lightbox */
+        #lightbox img {
+            max-width: 85%;
+            max-height: 85%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        /* Video styling */
+        iframe {
+            max-width: 100%;
+            border: none;
+        }
+
+        /* Contact form */
+        form input {
+            padding: 12px;
+            width: min(300px, 90%);
+            margin: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #174c77;
+            color: white;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0e3554;
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: #174c77;
+            color: white;
+            padding: 20px;
+        }
+
+        /* Responsive layout for smaller screens */
+        @media (max-width: 700px) {
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#video">Video</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home">
+
+        <h1>Explore the World</h1>
+
+        <p>
+            Welcome to Explore the World! Discover beautiful
+            destinations, exciting adventures, and amazing places
+            to visit around the world.
+        </p>
+
+    </section>
+
+    <!-- DESTINATIONS SECTION -->
+    <section id="destinations">
+
+        <h2>Popular Destinations</h2>
+
+        <p>Click on an image to view a larger version!</p>
+
+        <div class="gallery">
+
+            <!-- PARIS -->
+            <div class="gallery-item">
+
+                <h3>Paris</h3>
+
+                <!-- Small thumbnail opens original image -->
+                <img
+                    src="paris-small.png"
+                    data-full="paris.jpg.png"
+                    class="lightbox-image"
+                    alt="Eiffel Tower in Paris, France">
+
+                <p>
+                    Explore the beautiful streets of Paris
+                    and visit the famous Eiffel Tower.
+                </p>
+
+            </div>
+
+            <!-- DUBAI -->
+            <div class="gallery-item">
+
+                <h3>Dubai</h3>
+
+                <!-- Small thumbnail opens original image -->
+                <img
+                    src="dubai-small.png"
+                    data-full="dubai.jpg.png"
+                    class="lightbox-image"
+                    alt="Dubai skyline">
+
+                <p>
+                    Discover Dubai's modern architecture,
+                    luxury attractions, and beautiful skyline.
+                </p>
+
+            </div>
+
+            <!-- MALDIVES -->
+            <div class="gallery-item">
+
+                <h3>Maldives</h3>
+
+                <!-- Small thumbnail opens original image -->
+                <img
+                    src="maldives-small.png"
+                    data-full="maldives.jpg.png"
+                    class="lightbox-image"
+                    alt="Beautiful tropical beach in the Maldives">
+
+                <p>
+                    Relax on the stunning beaches of the Maldives
+                    and enjoy crystal-clear turquoise waters.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- VIDEO SECTION -->
+    <section id="video">
+
+        <h2>Travel Video</h2>
+
+        <p>
+            Watch this video and get inspired
+            for your next adventure!
+        </p>
+
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/ysz5S6PUM-U"
+            title="Travel Video"
+            allowfullscreen>
+        </iframe>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+
+        <h2>Contact Us</h2>
+
+        <p>
+            Contact us to learn more about
+            your next adventure!
+        </p>
+
+        <form>
+
+            <input
+                type="text"
+                name="first_name"
+                placeholder="First Name"
+                aria-label="First Name"
+                required>
+            <br><br>
+
+            <input
+                type="text"
+                name="last_name"
+                placeholder="Last Name"
+                aria-label="Last Name"
+                required>
+            <br><br>
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Email Address"
+                aria-label="Email Address"
+                required>
+            <br><br>
+
+            <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                aria-label="Phone Number">
+            <br><br>
+
+            <input type="submit" value="Submit">
+
+        </form>
+
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer>
+
+        <p>
+            &copy; 2026 Explore the World.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+    <!-- Connect the JavaScript lightbox gallery -->
+    <script src="JS/one_page_website.js"></script>
+
+</body>
+</html>
