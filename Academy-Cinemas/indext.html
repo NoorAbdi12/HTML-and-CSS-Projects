@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -99,6 +100,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#tickets">
                             Tickets
+                        </a>
+                    </li>
+
+                    <!-- Movie Deals Navigation -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deals">
+                            Movie Deals
                         </a>
                     </li>
 
@@ -243,6 +251,153 @@
     </section>
 
 
+    <!-- MOVIE DEALS SECTION -->
+    <!-- Bootstrap utilities create a jumbotron-style section -->
+    <section id="deals" class="bg-info mt-5 py-5 text-center">
+
+        <div class="container">
+
+            <h1 class="display-4 text-white fw-bold text-uppercase">
+                Movie Deals
+            </h1>
+
+            <p class="lead">
+                Check out our monthly deals...
+            </p>
+
+            <!-- This button opens the Bootstrap registration modal -->
+            <button type="button"
+                    class="btn btn-outline-dark"
+                    data-bs-toggle="modal"
+                    data-bs-target="#register">
+
+                See our monthly movie deals!
+
+            </button>
+
+        </div>
+    </section>
+    <!-- END MOVIE DEALS SECTION -->
+
+
+    <!-- BOOTSTRAP COMPONENT CHALLENGE -->
+    <!-- A modal displays a registration form in a pop-up window -->
+    <div class="modal fade"
+         id="register"
+         tabindex="-1"
+         aria-labelledby="registerLabel"
+         aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+
+                    <h5 class="modal-title" id="registerLabel">
+                        Register for Movie Deals
+                    </h5>
+
+                    <!-- Close button dismisses the modal -->
+                    <button type="button"
+                            class="btn-close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close">
+                    </button>
+
+                </div>
+
+                <!-- Registration Form -->
+                <form id="dealsForm">
+
+                    <div class="modal-body">
+
+                        <!-- First Name -->
+                        <div class="mb-3">
+
+                            <label for="dealFirstName"
+                                   class="form-label">
+                                First Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="dealFirstName"
+                                   placeholder="First Name"
+                                   required>
+
+                        </div>
+
+                        <!-- Last Name -->
+                        <div class="mb-3">
+
+                            <label for="dealLastName"
+                                   class="form-label">
+                                Last Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="dealLastName"
+                                   placeholder="Last Name"
+                                   required>
+
+                        </div>
+
+                        <!-- Email Address -->
+                        <div class="mb-3">
+
+                            <label for="dealEmail"
+                                   class="form-label">
+                                Email Address
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   id="dealEmail"
+                                   placeholder="Enter your email"
+                                   required>
+
+                        </div>
+
+                        <!-- Confirmation message -->
+                        <div id="registrationMessage"
+                             class="alert alert-success d-none"
+                             role="status">
+
+                            Thank you! Your demo registration is complete.
+
+                        </div>
+
+                    </div>
+
+                    <!-- Modal Footer -->
+                    <div class="modal-footer">
+
+                        <button type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal">
+                            Close
+                        </button>
+
+                        <button type="submit"
+                                class="btn btn-primary">
+                            Register
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- END BOOTSTRAP MODAL -->
+
+
     <!-- CONTACT SECTION -->
     <section id="contact" class="container mt-5 mb-5">
 
@@ -361,8 +516,41 @@
     </div>
 
 
-    <!-- Bootstrap JavaScript -->
+    <!-- Bootstrap JavaScript enables interactive components -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- CUSTOM JAVASCRIPT -->
+    <script>
+
+        // Select the movie deals registration form
+        const dealsForm = document.getElementById("dealsForm");
+
+        // Run this function when the registration form is submitted
+        dealsForm.addEventListener("submit", function(event) {
+
+            // Prevent the page from refreshing
+            event.preventDefault();
+
+            // Display the registration confirmation message
+            document.getElementById("registrationMessage")
+                .classList.remove("d-none");
+
+            // Clear the registration form fields
+            dealsForm.reset();
+
+        });
+
+        // Hide the confirmation message when the modal closes
+        document.getElementById("register")
+            .addEventListener("hidden.bs.modal", function() {
+
+                document.getElementById("registrationMessage")
+                    .classList.add("d-none");
+
+            });
+
+    </script>
 
 </body>
 </html>
