@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noor Abdi | Software Developer Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#slideshow">Slideshow</a>
+        <a href="#about">About</a>
+        <a href="#github">GitHub</a>
+        <a href="#linkedin">LinkedIn</a>
+        <a href="#contact" onclick="openForm(); return false;">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="home-content">
+            <h1>Noor Abdi's Portfolio</h1>
+
+            <p>
+                Welcome to my portfolio! I am an aspiring software developer
+                passionate about technology, innovation, and creating
+                user-friendly websites.
+            </p>
+
+            <p>
+                I enjoy learning new programming languages and building
+                digital solutions that make a positive difference.
+            </p>
+
+            <button onclick="openForm()">Contact Me</button>
+        </div>
+    </section>
+
+    <!-- Slideshow Section -->
+    <section id="slideshow">
+        <h2>My Skills and Interests</h2>
+
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+                <img src="images/profile.jpg" alt="Personal photo">
+                <div class="slide-text">
+                    Hello! I'm Noor Abdi.
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/html-css.jpg" alt="HTML and CSS">
+                <div class="slide-text">
+                    I build websites using HTML and CSS.
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/javascript.jpg" alt="JavaScript">
+                <div class="slide-text">
+                    I create interactive websites using JavaScript.
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="images/coding.jpg" alt="Software development">
+                <div class="slide-text">
+                    I am passionate about software development.
+                </div>
+            </div>
+
+            <button class="prev" onclick="plusSlides(-1)"
+                aria-label="Previous slide">&#10094;</button>
+
+            <button class="next" onclick="plusSlides(1)"
+                aria-label="Next slide">&#10095;</button>
+
+        </div>
+
+        <!-- Slideshow Navigation Dots -->
+        <div class="dots">
+            <button class="dot" onclick="currentSlide(1)"
+                aria-label="Slide 1"></button>
+            <button class="dot" onclick="currentSlide(2)"
+                aria-label="Slide 2"></button>
+            <button class="dot" onclick="currentSlide(3)"
+                aria-label="Slide 3"></button>
+            <button class="dot" onclick="currentSlide(4)"
+                aria-label="Slide 4"></button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="row">
+
+        <div class="column image-column">
+            <img src="images/profile.jpg" alt="Noor Abdi">
+        </div>
+
+        <div class="column text-column">
+            <h2>About Me</h2>
+
+            <p>
+                My name is Noor Abdi. I am an aspiring software developer
+                with a professional background in community support
+                services and a passion for technology.
+            </p>
+
+            <p>
+                I am currently studying software development at
+                The Academy of Learning, where I am developing my skills in
+                HTML, CSS, JavaScript, Bootstrap, and GitHub.
+            </p>
+
+            <p>
+                My goal is to combine technology with my experience in
+                community services to create accessible and meaningful
+                digital solutions.
+            </p>
+
+            <button onclick="openForm()">Get in Touch</button>
+        </div>
+
+    </section>
+
+    <!-- GitHub Section -->
+    <section id="github" class="row">
+
+        <div class="column text-column">
+            <h2>GitHub</h2>
+
+            <p>
+                Visit my GitHub profile to explore my coding projects
+                and follow my software development journey.
+            </p>
+
+            <a class="link-button"
+               href="https://github.com/NoorAbdi12"
+               target="_blank" rel="noopener noreferrer">
+                View My GitHub
+            </a>
+        </div>
+
+        <div class="column image-column">
+            <img src="images/github.png" alt="GitHub">
+        </div>
+
+    </section>
+
+    <!-- LinkedIn Section -->
+    <section id="linkedin" class="row">
+
+        <div class="column image-column">
+            <img src="images/linkedin.png" alt="LinkedIn">
+        </div>
+
+        <div class="column text-column">
+            <h2>LinkedIn</h2>
+
+            <p>
+                Connect with me on LinkedIn to learn more about
+                my professional experience, education, and
+                career development.
+            </p>
+
+            <a class="link-button"
+               href="https://www.linkedin.com/in/noor-abdi-728552452/"
+               target="_blank" rel="noopener noreferrer">
+                Connect on LinkedIn
+            </a>
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+
+        <p>
+            Interested in working together or learning more
+            about my projects? Feel free to contact me.
+        </p>
+
+        <button onclick="openForm()">Open Contact Form</button>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <button class="floating-contact" onclick="openForm()">
+        CONTACT
+    </button>
+
+    <!-- Pop-up Contact Form -->
+    <dialog id="contactForm" class="form-popup">
+
+        <form class="form-container"
+              action="https://formspree.io/f/xzerzaqz"
+              method="POST"
+              onsubmit="return validateForm()">
+
+            <h2>Contact Me</h2>
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your name">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email"
+                   placeholder="Enter your email">
+
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone"
+                   placeholder="Enter your phone number">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message"
+                      placeholder="Enter your message"></textarea>
+
+            <p id="formError" role="alert"></p>
+
+            <button type="submit" class="submit-button">
+                Submit
+            </button>
+
+            <button type="button" class="close-button"
+                    onclick="closeForm()">
+                Close
+            </button>
+
+        </form>
+
+    </dialog>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Noor Abdi | Portfolio Website</p>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="portfolio.js"></script>
+
+</body>
+</html>
